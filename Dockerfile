@@ -8,5 +8,6 @@ RUN yum install -y net-tools
 RUN yum install -y openssh-server
 RUN yum install -y openssh-clients
 RUN yum install -y passwd
+RUN useradd k8s-admin
 
 CMD ["/sbin/init"]
