@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  master_node_00:
+    container_name: master_node_00
+    image: kuberjjs/kuber:1.1
+    privileged: true
+    ports:
+      - '1222:22'
+    expose:
+      - '22'
+    environment:
+      - TZ=Asia/Seoul
+    restart: always
+    command: systemctl start sshd
+    command: /sbin/init
+
+  worker_node_00:
+    container_name: worker_node_00
+    image: kuberjjs/kuber:1.1
+    privileged: true
+    ports:
+      - '2222:22'
+    expose:
+      - '22'
+    environment:
+      - TZ=Asia/Seoul
+    restart: always
+    command: systemctl start sshd
+    command: /sbin/init
+
+  worker_node_01:
+    container_name: worker_node_01
+    image: kuberjjs/kuber:1.1
+    privileged: true
+    ports:
+      - '3222:22'
+    expose:
+      - '22'
+    environment:
+      - TZ=Asia/Seoul
+    restart: always
+    command: systemctl start sshd
+    command: /sbin/init
+
+  worker_node_02:
+    container_name: worker_node_02
+    image: kuberjjs/kuber:1.1
+    privileged: true
+    ports:
+      - '4222:22'
+    expose:
+      - '22'
+    environment:
+      - TZ=Asia/Seoul
+    restart: always
+    command: systemctl start sshd
+    command: /sbin/init
